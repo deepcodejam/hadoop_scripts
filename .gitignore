@@ -1,0 +1,8 @@
+share/
+*.jar
+LICENSE.txt
+NOTICE.txt
+logs/
+lib/
+output/
+file.txt
