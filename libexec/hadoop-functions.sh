@@ -1763,7 +1763,7 @@ function hadoop_java_exec
 
   #source '/home/jb/mac_user_dir/tools/hadoop-3.1.1/libexec/deduper.sh'
   #CLASSPATH=`dedup_classpath`
-  HADOOP_OPTS+=" -XX:-TieredCompilation -Xmn100k"
+  HADOOP_OPTS+=" -XX:-TieredCompilation -Xmn500k"
 
   export CLASSPATH
   #shellcheck disable=SC2086
