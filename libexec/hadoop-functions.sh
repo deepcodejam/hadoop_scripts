@@ -1761,6 +1761,10 @@ function hadoop_java_exec
   hadoop_debug "Class name: ${class}"
   hadoop_debug "Command line options: $*"
 
+  #source '/home/jb/mac_user_dir/tools/hadoop-3.1.1/libexec/deduper.sh'
+  #CLASSPATH=`dedup_classpath`
+  HADOOP_OPTS+=" -XX:-TieredCompilation -Xmn100k"
+
   export CLASSPATH
   #shellcheck disable=SC2086
   #echo "java is: $JAVA | command is: $command | opts are: $HADOOP_OPTS | class is: $class"

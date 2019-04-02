@@ -98,6 +98,7 @@ function hdfscmd_case
       HADOOP_CLASSNAME='org.apache.hadoop.hdfs.server.datanode.DataNode'
       hadoop_deprecate_envvar HADOOP_SECURE_DN_PID_DIR HADOOP_SECURE_PID_DIR
       hadoop_deprecate_envvar HADOOP_SECURE_DN_LOG_DIR HADOOP_SECURE_LOG_DIR
+      HADOOP_OPTS+=" -XX:-TieredCompilation -Xmn100k"
     ;;
     debug)
       HADOOP_CLASSNAME='org.apache.hadoop.hdfs.tools.DebugAdmin'
@@ -168,6 +169,7 @@ function hdfscmd_case
     namenode)
       HADOOP_SUBCMD_SUPPORTDAEMONIZATION="true"
       HADOOP_CLASSNAME='org.apache.hadoop.hdfs.server.namenode.NameNode'
+      HADOOP_OPTS+=" -XX:-TieredCompilation -Xmn100k"
       hadoop_add_param HADOOP_OPTS hdfs.audit.logger "-Dhdfs.audit.logger=${HDFS_AUDIT_LOGGER}"
     ;;
     nfs3)
@@ -193,6 +195,7 @@ function hdfscmd_case
     secondarynamenode)
       HADOOP_SUBCMD_SUPPORTDAEMONIZATION="true"
       HADOOP_CLASSNAME='org.apache.hadoop.hdfs.server.namenode.SecondaryNameNode'
+      HADOOP_OPTS+=" -XX:-TieredCompilation -Xmn100k"
       hadoop_add_param HADOOP_OPTS hdfs.audit.logger "-Dhdfs.audit.logger=${HDFS_AUDIT_LOGGER}"
     ;;
     snapshotDiff)
